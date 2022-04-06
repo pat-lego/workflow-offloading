@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="cq:Page">
+    <jcr:content
+        cq:designPath="/libs/settings/wcm/designs/default"
+        cq:lastModified="{Date}2022-04-06T10:11:51.637-04:00"
+        cq:lastModifiedBy="admin"
+        cq:template="/libs/cq/workflow/templates/model"
+        jcr:primaryType="cq:PageContent"
+        jcr:title="Invoker Model"
+        sling:resourceType="cq/workflow/components/pages/model">
+        <flow
+            jcr:primaryType="nt:unstructured"
+            sling:resourceType="foundation/components/parsys">
+            <process
+                jcr:created="{Date}2022-04-05T14:21:04.664-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-04-05T14:29:46.131-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Pre Workflow Dispatch"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.aem.core.workflow.SimpleProcess"
+                    PROCESS_ARGS="Message=About to trigger the workflow"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process>
+            <container
+                jcr:created="{Date}2022-04-06T10:11:34.303-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-04-06T10:11:51.634-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Container"
+                sling:resourceType="cq/workflow/components/model/container">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    CONTAINER="/var/workflow/models/invoked-model"/>
+            </container>
+            <process_1962543971
+                jcr:created="{Date}2022-04-05T14:22:19.448-04:00"
+                jcr:createdBy="admin"
+                jcr:lastModified="{Date}2022-04-05T14:29:51.096-04:00"
+                jcr:lastModifiedBy="admin"
+                jcr:primaryType="nt:unstructured"
+                jcr:title="Post Workflow Dispatch"
+                sling:resourceType="cq/workflow/components/model/process">
+                <metaData
+                    jcr:primaryType="nt:unstructured"
+                    PROCESS="com.adobe.aem.core.workflow.SimpleProcess"
+                    PROCESS_ARGS="Message=The workflow is now complete"
+                    PROCESS_AUTO_ADVANCE="true"/>
+            </process_1962543971>
+        </flow>
+    </jcr:content>
+</jcr:root>
